@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ㅔㅈ목 여기</title>
+	</head>
+	<body>
+		<h1>world, world</h1>
+		<% out.println("<h1>자바로</h1>");%>
+		<%
+			int a=10;
+			int b=20;
+			int s=a+b;
+			out.println("변수 a와b의 합 "+s+"  ")	;
+		%>
+	</body>
+</html>
+
+

@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<%
+			String temp="색상 변경";
+			String temp2="";
+			for(int i=0; i<7; i++){
+				switch(i){
+				case 0:
+					temp2="red";
+					break;
+				case 1:
+					temp2="orange";
+					break;
+				case 2:
+					temp2="yellow";
+					break;
+				case 3:
+					temp2="green";
+					break;
+				case 4:
+					temp2="blue";
+					break;
+				case 5:
+					temp2="black";
+					break;
+				case 6:
+					temp2="purple";
+					break;
+				}
+
+				%><h1 style="color:<%=temp2%>"><%=temp%></h1><%
+			}
+		%>
+	</body>
+</html>
