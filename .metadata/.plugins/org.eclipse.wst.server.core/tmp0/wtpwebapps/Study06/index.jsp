@@ -14,6 +14,9 @@
 			<input type="text" name="sec" placeholder="두 값">
 			<input type="submit" value="전송">
 		</form>
+		
+		<!-- a태그의 링크주소 부분에 get방식 데이터를 적어 넣어서 전송이 가능 -->
+		<a href="welcome.jsp?fst=data1&sec=data2">눌러서</a>
 	
 	</body>
 </html>
