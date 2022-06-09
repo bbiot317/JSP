@@ -26,12 +26,32 @@
 				String query="select * from register;";
 				ResultSet rs = stmt.executeQuery(query);
 				
+
+				out.print("<table>");
 				while(rs.next()){
+
+					out.print("<tr>");
+					String num=rs.getString("num");
 					String uid=rs.getString("id");
-					out.print("<h1>"+uid+"</h1>");
+					String upass=rs.getString("pass");
+					String name=rs.getString("name");
+					String mail=rs.getString("email");
+					String phone=rs.getString("phone");
+					String addr=rs.getString("address");
+					
+					out.print("<td style='border:1px solid'>"+num+"</td>");
+					out.print("<td style='border:1px solid'>"+uid+"</td>");
+					out.print("<td style='border:1px solid'>"+upass+"</td>");
+					out.print("<td style='border:1px solid'>"+name+"</td>");
+					out.print("<td style='border:1px solid'>"+mail+"</td>");
+					out.print("<td style='border:1px solid'>"+phone+"</td>");
+					out.print("<td style='border:1px solid'>"+addr+"</td>");
+					out.print("</tr>");
+
 				}
+				out.print("</table>");
 				
-				out.print("<h2>정상 접속 확인</h1>");
+				out.print("<h2>정상 접속 확인</h2>");
 			}catch(Exception e){
 				out.print("<h2>오류발생"+e+"</h2>");
 			}

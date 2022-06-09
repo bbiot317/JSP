@@ -25,7 +25,7 @@
 		<%
 			String grade=(String)session.getAttribute("grade"); //session - grade:String
 		%>
-		<h2><%=grade %>로 접속됨</h2>
+		<h2><%= grade %>로 접속됨</h2>
 		<ul>
 			<li>메뉴1</li>
 			<li>메뉴2</li>
