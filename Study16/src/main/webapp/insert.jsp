@@ -24,9 +24,10 @@
 			String phone=request.getParameter("ph");
 			String addr=request.getParameter("ad");
 			try{
-				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn=DriverManager.getConnection(url,db_id,db_pw);
 				stmt=conn.createStatement();
+
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				
 				String sql= "insert into register (id,pass,name,email,phone,address) values(";
 				sql+="'"+id+"','"+pw+" ',' "+name+ "',' "+mail+"','"+phone+"','"+addr+"');";

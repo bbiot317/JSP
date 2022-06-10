@@ -15,8 +15,10 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<a href="register.jsp">회원가입</a>
-			<a href="member.jsp">회원조회</a>
+			<a href="register.jsp">회원가입</a><br>
+			<a href="member.jsp">회원조회</a><br>
+			<a href="edit.jsp">정보수정</a><br>
+			<a href="erase.jsp">회원삭제</a>
 		</div>
 	</body>
 </html>

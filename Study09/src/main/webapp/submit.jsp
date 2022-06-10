@@ -22,7 +22,6 @@
 			String date=request.getParameter("date"); //input type="date" YYYY-MM-DD로 전송
 			String datetime=request.getParameter("datetime"); // YYYY-MM-DDThh:mm 형태로 전송됨
 			String range=request.getParameter("range");
-		
 		%>
 		
 		
