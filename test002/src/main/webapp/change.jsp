@@ -12,27 +12,24 @@
 			Connection conn=null;
 			ResultSet rs=null;
 			Statement stmt = null;
+
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			String id="root";
 			String pw="iotiot";
-			String url = "jdbc:mysql://127.0.0.1:3306/test002";
+			String url = "jdbc:mysql://127.0.0.1:3306/study";
 			conn=DriverManager.getConnection(url, id, pw);
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			stmt = conn.createStatement();
 			
-			//String[] all = new String[]{"noti","menu1","menu2","menu3","d ";
-			String noti=request.getParameter("noti");
-			String mn1=request.getParameter("menu1");
-			String mn2=request.getParameter("menu2");
-			String mn3=request.getParameter("menu3");
-			String mn4=request.getParameter("menu4");
-			String color1=request.getParameter("color1");
-			String color2=request.getParameter("color2");
+			request.setCharacterEncoding("utf-8");
+			String[] req = request.getParameterValues("input");
 			
+			String sql="update test002 set menu1='"+req[2]+"', menu2= '"+req[3]+"',menu3='"+req[4]+"'";
+					sql+= ", menu4='"+req[5]+"', noti='"+req[6]+"', color1='"+req[0]+"', color2='"+req[1]+"';";
 			
-			String sql="update register set menu1='"+mn1+"', menu2='"+mn2+"', menu3='"+mn3+"', menu4='"+mn4+"', noti=' "+noti+"', color1='"+color1+"', color2='"+color2+"';";
 			
 			out.print(sql);
-			//stmt.executeUpdate(sql);
+			out.print(req.length);
+			stmt.executeUpdate(sql);
 			
 			response.sendRedirect("index.jsp");
 			

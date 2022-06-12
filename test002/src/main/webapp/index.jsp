@@ -7,11 +7,7 @@
 		<meta charset="utf-8">
 		<title>Insert title here</title>
 		<style>
-			body{
-				background-color:#0000ff;
-			}
 			#wrap{
-				bgcolor:white;
 				border:3px solid black;
 				width:350px;
 				margin:0 auto;
@@ -41,35 +37,56 @@
 			
 		</style>
 	</head>
-	<body>
 			<%
+				Connection conn=null;
+				ResultSet rs=null;
+				Statement stmt=null;
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				String url="jdbc:mysql://127.0.0.1:3306/study";
+
+				String uid="root";
+				String upw="iotiot";
+				conn= DriverManager.getConnection(url,uid,upw);
+				stmt= conn.createStatement();
+				String sql = "select * from test002";
+				rs= stmt.executeQuery(sql);
+				rs.next();
+				String noti=rs.getString("noti");
+				String menu1=rs.getString("menu1");
+				String menu2=rs.getString("menu2");
+				String menu3=rs.getString("menu3");
+				String menu4=rs.getString("menu4");
+				String color1=rs.getString("color1");
+				String color2=rs.getString("color2");
 				
 			%>
+	<body style="background-color:<%=color1%>;">
 			
-		<div id="wrap">
+			
+		<div id="wrap" style="background-color:<%= color2%>;">
 			<form method="post" action="change.jsp">
-				<h1 id="h1">안내문을 입력</h1>	
+				<h1 id="h1"><%=noti%></h1>	
 				<ul>
-					<li>미지정</li><li>미지정</li><li>미지정</li><li>미지정</li>
+					<li><%=menu1 %></li><li><%=menu2 %></li><li><%=menu3 %></li><li><%=menu4 %></li>
 				</ul>
 				<fieldset>
 					<legend>배경색상 관리</legend>
-					<input type="color" name="color1"> 
+					<input type="color" value="<%=color1%>" name="input"> 
 				</fieldset>
 				<fieldset>
 					<legend>전경색상 관리</legend>
-					<input type="color" name="color2">
+					<input type="color" value="<%=color2 %>" name="input">
 				</fieldset>
 				<fieldset>
 					<legend>메뉴명 변경</legend>
-					<input type="text" value="미지정" name="menu1"><br>
-					<input type="text" value="미지정" name="menu2"><br>
-					<input type="text" value="미지정" name="menu3"><br>
-					<input type="text" value="미지정" name="menu4">
+					<input type="text" value="<%=menu1 %>" name="input"><br>
+					<input type="text" value="<%=menu2 %>" name="input"><br>
+					<input type="text" value="<%=menu3 %>" name="input"><br>
+					<input type="text" value="<%=menu4 %>" name="input">
 				</fieldset>
 				<fieldset>
 					<legend>안내문 관리</legend>
-					<input type="text" value="미지정" name="noti">
+					<input type="text" value="<%=noti%>" name="input">
 				</fieldset>
 				<input type="submit" value="변경">
 			</form>
