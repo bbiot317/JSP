@@ -1,0 +1,13 @@
+@charset "EUC-KR";
+*{
+	margin:0;
+	padding:0;
+}
+
+#wrap{
+	border:10px solid black;
+	width: 200px;
+	margin: 0 auto;
+}
+input{	width:50%; }
+.phone{ width:15%; }
